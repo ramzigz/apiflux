@@ -1,0 +1,19 @@
+{
+  "name": "apiflux",
+  "version": "1.0.0",
+  "description": "Scalable backend system for handling high concurrency with rate limits",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node src/test/stressTest.js",
+    "start:test": "TEST_MODE=true node src/server.js",
+    "start:prod": "TEST_MODE=false node src/server.js",
+    "test:quick": "CONCURRENT_REQUESTS=20 TEST_REQUESTS_COUNT=20 node src/test/stressTest.js",
+    "test:full": "TEST_MODE=false node src/test/stressTest.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.3"
+  }
+}
